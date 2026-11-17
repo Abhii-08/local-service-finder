@@ -31,7 +31,7 @@ export function haversineKm(lat1, lng1, lat2, lng2) {
   return 12742 * Math.asin(Math.sqrt(a));
 }
 export const mapsLink = (p) => `https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}`;
-export const pin = (latlng, color = '#f4a300') => L.circleMarker(latlng, { radius: 9, color: '#0a525e', weight: 2, fillColor: color, fillOpacity: 1 });
+export const pin = (latlng, color = '#91e5c6') => L.circleMarker(latlng, { radius: 9, color: '#173d34', weight: 2, fillColor: color, fillOpacity: 1 });
 export function makeMap(el) { // Leaflet + OpenStreetMap; returns null (with a message) if the library could not load
   if (!window.L) { el.replaceWith(h('p', { class: 'notice' }, 'The map could not load. Check your internet connection and reload the page.')); return null; }
   // One-finger drag scrolls the page on phones (two fingers move the map); the mouse wheel zooms only after the map is clicked.
@@ -61,7 +61,7 @@ export function makeMap(el) { // Leaflet + OpenStreetMap; returns null (with a m
 function fallbackAvatar(name) {
   const initials = name.split(' ').map((w) => w[0]).slice(0, 2).join('');
   return 'data:image/svg+xml,' + encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0f6b7a"/><text x="50" y="63" font-size="38" text-anchor="middle" fill="#fff" font-family="sans-serif">${initials}</text></svg>`);
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#234e43"/><text x="50" y="63" font-size="38" text-anchor="middle" fill="#fff" font-family="sans-serif">${initials}</text></svg>`);
 }
 export function avatar(p, size = 64) {
   const img = h('img', { src: `https://i.pravatar.cc/320?img=${p.photo}`, alt: `Photo of ${p.name}`, width: size, height: size, loading: 'lazy' });

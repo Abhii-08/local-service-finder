@@ -90,7 +90,7 @@ function background() {
   const ctx = cv.getContext('2d'); if (!ctx) return;
   let w = 0, h = 0, dots = [], run = true;
   const size = () => { const d = Math.min(devicePixelRatio || 1, 1.5); w = innerWidth; h = innerHeight; cv.width = w * d; cv.height = h * d; ctx.setTransform(d, 0, 0, d, 0, 0); };
-  const seed = () => { const n = innerWidth < 700 ? 18 : 42; dots = Array.from({ length: n }, () => ({ x: Math.random() * w, y: Math.random() * h, r: Math.random() * 1.6 + 0.4, vx: (Math.random() - 0.5) * 0.18, vy: -Math.random() * 0.22 - 0.04, hue: Math.random() < 0.5 ? '125,211,252' : '167,139,250' })); };
+  const seed = () => { const n = innerWidth < 700 ? 18 : 42; dots = Array.from({ length: n }, () => ({ x: Math.random() * w, y: Math.random() * h, r: Math.random() * 1.6 + 0.4, vx: (Math.random() - 0.5) * 0.18, vy: -Math.random() * 0.22 - 0.04, hue: Math.random() < 0.5 ? '145,229,198' : '237,189,151' })); };
   const tick = () => {
     if (!run) return;
     ctx.clearRect(0, 0, w, h);
