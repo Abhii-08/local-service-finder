@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#091016"><link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/theme.css"><link rel="stylesheet" href="css/login.css"><link rel="stylesheet" href="css/admin.css"><link rel="stylesheet" href="css/premium.css"><script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer></script><title>Admin | Service Local Finder</title></head>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#2F2235"><link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/theme.css"><link rel="stylesheet" href="css/login.css"><link rel="stylesheet" href="css/admin.css"><link rel="stylesheet" href="css/premium.css"><link rel="stylesheet" href="css/showcase.css"><script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer></script><title>Admin | Service Local Finder</title></head>
 <body class="adm-body"><a class="skip" id="skip" href="#main">Skip to content</a>
 
 <!-- ===== sign in ===== -->
@@ -22,13 +22,13 @@
 <div id="admin-view" class="adm-shell" hidden>
   <aside id="sidebar" class="sidebar" aria-label="Admin sections">
     <a class="logo sb-logo" href="index.html" title="Back to the website"><i data-lucide="map-pinned" aria-hidden="true"></i><span class="sb-t">Service Local <b>Finder</b></span></a>
-    <span class="sb-section sb-t">Workspace</span>
+    <span class="sb-section sb-t">YOUR WORKSPACE</span>
     <nav class="sb-nav" id="sb-nav">
-      <button type="button" data-view="overview" title="Overview"><i data-lucide="layout-dashboard" aria-hidden="true"></i><span class="sb-t">Overview</span></button>
-      <button type="button" data-view="enquiries" title="Bookings and enquiries"><i data-lucide="calendar-check" aria-hidden="true"></i><span class="sb-t">Enquiries</span><em class="sb-n" id="n-enq"></em></button>
-      <button type="button" data-view="providers" title="Service providers"><i data-lucide="hard-hat" aria-hidden="true"></i><span class="sb-t">Providers</span><em class="sb-n" id="n-prov"></em></button>
-      <button type="button" data-view="users" title="Customers"><i data-lucide="users" aria-hidden="true"></i><span class="sb-t">Users</span><em class="sb-n" id="n-usr"></em></button>
-      <button type="button" data-view="categories" title="Service categories"><i data-lucide="layers" aria-hidden="true"></i><span class="sb-t">Categories</span></button>
+      <button type="button" data-view="overview" title="Overview"><i data-lucide="layout-dashboard" aria-hidden="true"></i><span class="sb-t">Dashboard</span></button>
+      <button type="button" data-view="enquiries" title="Bookings and enquiries"><i data-lucide="calendar-check" aria-hidden="true"></i><span class="sb-t">Service requests</span><em class="sb-n" id="n-enq"></em></button>
+      <button type="button" data-view="providers" title="Service providers"><i data-lucide="hard-hat" aria-hidden="true"></i><span class="sb-t">Service providers</span><em class="sb-n" id="n-prov"></em></button>
+      <button type="button" data-view="users" title="Customers"><i data-lucide="users" aria-hidden="true"></i><span class="sb-t">Customers</span><em class="sb-n" id="n-usr"></em></button>
+      <button type="button" data-view="categories" title="Service categories"><i data-lucide="layers" aria-hidden="true"></i><span class="sb-t">Services & categories</span></button>
     </nav>
     <div class="sb-foot">
       <a href="index.html" title="View website"><i data-lucide="globe" aria-hidden="true"></i><span class="sb-t">View website</span></a>
@@ -41,7 +41,7 @@
   <div class="adm-main">
     <header class="topbar">
       <button class="x-btn" id="sb-toggle" type="button" aria-label="Collapse sidebar" aria-expanded="true" aria-controls="sidebar"><i data-lucide="panel-left" aria-hidden="true"></i></button>
-      <div class="topbar-title"><span class="topbar-eyebrow">Service Local Finder / Operations</span><h1 id="view-title" tabindex="-1">Overview</h1></div>
+      <div class="topbar-title"><span class="topbar-eyebrow">OPERATIONS CENTER · LOCAL SERVICE FINDER</span><h1 id="view-title" tabindex="-1">Overview</h1></div>
       <div class="top-actions">
         <button class="btn btn-ghost" id="sample-btn" type="button" aria-pressed="false" title="Fill the dashboard with fictional records to preview charts and tables"><i data-lucide="flask-conical" aria-hidden="true"></i><span class="hide-sm">Sample data</span></button>
         <div class="dd"><button class="x-btn" id="bell" type="button" aria-label="Notifications" aria-haspopup="true" aria-expanded="false"><i data-lucide="bell" aria-hidden="true"></i><span class="bell-n" id="bell-n" hidden>0</span></button><div class="menu" id="bell-menu" hidden></div></div>
@@ -56,14 +56,29 @@
 
       <!-- Overview -->
       <section data-panel="overview" aria-label="Overview">
-        <div class="adm-intro"><div><span class="adm-eyebrow">YOUR CONTROL CENTRE</span><h2>Everything local, in one clear view.</h2><p class="muted">Monitor incoming enquiries, compare service activity and manage the day-to-day from a single workspace.</p></div><span class="adm-status">Operations overview</span></div>
+        <div class="admin-welcome">
+  <div class="admin-welcome-content">
+    <span class="admin-welcome-kicker">YOUR SERVICE MANAGEMENT STUDIO</span>
+    <h2>Manage local services.<br><em>See the full picture.</em></h2>
+    <p>Track enquiries, explore your provider directory and stay on top of day-to-day service activity.</p>
+    <div class="admin-welcome-actions">
+      <button class="btn btn-primary" type="button" data-go="enquiries"><i data-lucide="clipboard-list" aria-hidden="true"></i> Manage enquiries</button>
+      <button class="btn btn-ghost" type="button" data-go="providers"><i data-lucide="users-round" aria-hidden="true"></i> View providers</button>
+    </div>
+  </div>
+  <div class="admin-welcome-photo" aria-hidden="true">
+    <img src="https://images.pexels.com/photos/27928761/pexels-photo-27928761.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" width="1100" height="1000" decoding="async" alt="">
+  </div>
+  <span class="admin-welcome-note">Directory information is currently sample data</span>
+</div>
         <div class="kpis" id="kpis"></div>
-        <div class="chart-grid">
+        <div class="chart-grid dashboard-analytics">
           <article class="card chart-card" data-tilt="3"><h2 class="h-sm">Enquiries by category</h2><div id="ch-cat"></div></article>
           <article class="card chart-card" data-tilt="3"><h2 class="h-sm">Enquiry activity, last 7 days</h2><div id="ch-days"></div></article>
           <article class="card chart-card" data-tilt="3"><h2 class="h-sm">Provider performance</h2><p class="small muted" style="margin:0 0 .6rem">Enquiries per provider. Ratings are sample data.</p><div id="ch-prov"></div></article>
+        <aside class="dashboard-shortcuts" aria-label="Quick actions"><div class="shortcut-head"><span>WORKSPACE</span><h2 class="h-sm">Quick actions</h2><p>Go straight to a task.</p></div><button type="button" data-go="enquiries"><i data-lucide="calendar-check" aria-hidden="true"></i><span>Manage requests</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></button><button type="button" data-go="providers"><i data-lucide="hard-hat" aria-hidden="true"></i><span>Explore providers</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></button><button type="button" data-go="users"><i data-lucide="users" aria-hidden="true"></i><span>View customers</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></button><button type="button" data-go="categories"><i data-lucide="layers" aria-hidden="true"></i><span>Service categories</span><i data-lucide="arrow-up-right" aria-hidden="true"></i></button></aside>
         </div>
-        <article class="card pad"><div class="row-head"><h2 class="h-sm" style="margin:0">Recent enquiries</h2><button class="btn btn-ghost" type="button" data-go="enquiries">See all</button></div><div id="t-recent"></div></article>
+        <article class="card pad recent-requests"><div class="row-head"><h2 class="h-sm" style="margin:0">Recent enquiries</h2><button class="btn btn-ghost" type="button" data-go="enquiries">See all</button></div><div id="t-recent"></div></article>
         <p class="notice sec-note"><i data-lucide="shield-check" aria-hidden="true"></i><span><b>How access is protected.</b> Every request to the admin API must carry the server’s <code>ADMIN_KEY</code>, and the server rejects anything else. Hiding this page or checking a role in JavaScript would not be security. Set your own key and serve over HTTPS before going online.</span></p>
       </section>
 
