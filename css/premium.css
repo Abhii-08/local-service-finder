@@ -324,3 +324,178 @@ button.kpi:hover { border-color: rgba(145,229,198,.5); }
 .s-confirmed { background:rgba(237,189,151,.14);color:#f5caa8;border-color:rgba(237,189,151,.28); }
 .s-completed { background:rgba(77,189,123,.14);color:#a9f5c1;border-color:rgba(77,189,123,.28); }
 @media(max-width:700px){.page-lead{margin-bottom:1.1rem}.stat:first-child{border-left:0}.hero-in{max-width:100%}}
+
+
+/* 10 — Cohesion pass: forms, booking, map, authentication and small interactions.
+   Components in style.css and theme.css retain their behaviour; this is the final
+   design-system layer applied to every public and administrative view. */
+:root {
+  --atelier-focus: rgba(145,229,198,.24);
+  --atelier-success: #91e5c6;
+  --atelier-warning: #f2c49e;
+  --atelier-error: #ffb8ba;
+}
+.menu-btn { color: var(--ink); background: rgba(30,55,56,.8); border-color: var(--atelier-line); min-height:44px; min-width:44px; }
+.menu-btn:hover { border-color: rgba(145,229,198,.5); background:rgba(55,88,77,.6); }
+select option { background: #14292e; color: var(--ink); }
+input[type=checkbox],input[type=radio] { accent-color: var(--brand); }
+.btn:focus-visible,.pick:focus-visible,.opt:focus-within,.st:focus-visible,.ib:focus-visible {
+  outline: 2px solid var(--brand); outline-offset:3px;
+}
+.btn:disabled,.pick:disabled { cursor:not-allowed; filter:none; box-shadow:none; }
+.notice:not(.bad):not(.warn) {
+  color:#c2e7d6; background:rgba(111,183,151,.09);
+  border:1px solid rgba(145,229,198,.19);
+}
+.notice.bad { color:var(--atelier-error); background:rgba(234,89,104,.11); border-color:rgba(255,142,154,.32); }
+.notice.warn { color:var(--atelier-warning); background:rgba(237,189,151,.09); border-color:rgba(237,189,151,.32); }
+.err { color:var(--atelier-error); }
+code { color:#c3e9d8; background:rgba(164,218,190,.09); }
+[aria-invalid="true"] { border-color:#e68e98!important; box-shadow:0 0 0 3px rgba(235,128,144,.12); }
+.meta .rate { color:#f0c38b; }
+.meta .rate svg,.rev .stars svg { fill:#f0c38b; stroke:#f0c38b; }
+.rev .stars { color:#f0c38b; }
+.rev blockquote { color:#e9f1e7; }
+.review { background:rgba(145,229,198,.055); border-left-color:var(--atelier-highlight); }
+.review footer { color:#abc3b5; }
+.ref,.ref-sm { color:var(--brand-d); }
+.pcard .pc-top img,.p-head img,.cell-person img,.vw-head img {
+  background:#29463e; box-shadow:0 0 0 2px rgba(145,229,198,.16),0 10px 28px -17px #000;
+}
+.pcard .pc-top h3 { letter-spacing:-.03em; }
+.pcard .price b,.big-price b { color:#f3f8ef; }
+.pcard .actions .btn { min-width:0; }
+.chip.open { background:rgba(93,190,127,.13);color:#aef0c6;border-color:rgba(115,219,151,.28); }
+.chip.closed { background:rgba(221,233,226,.06);color:#b3c5bf;border-color:var(--line); }
+.pc-top img { flex-shrink:0; }
+#profile .p-main { min-width:0; }
+#profile .p-head { flex-wrap:wrap; }
+#profile .services li { border-color:var(--atelier-line); }
+#profile .p-side { background:linear-gradient(160deg,#213b3a,#14292d); }
+#profile .p-side:focus-within { border-color:rgba(145,229,198,.33); }
+
+/* Booking: visually clear step selection with readable active states */
+.book-grid { grid-template-columns:minmax(0,1fr) minmax(280px,340px); align-items:start; }
+.book .form { padding:clamp(1.1rem,3vw,1.9rem); gap:1.25rem; }
+.book .stepper { margin:1.7rem 0; gap:.6rem; }
+.st { padding:.35rem .85rem .35rem .35rem; border-radius:11px; color:#afc5ba; background:rgba(21,38,42,.9);border-color:var(--atelier-line); }
+.st .dot { background:rgba(145,229,198,.1);color:#b3ead0; }
+.st.now { border-color:var(--brand); color:#e8ffef; background:rgba(145,229,198,.08); }
+.st.now .dot { color:#092e22;background:var(--grad); }
+.st.done { color:var(--brand-d); }
+.st.done .dot { color:#c8f9dd;background:rgba(105,200,149,.24); }
+.opt { border-radius:12px; background:rgba(10,28,31,.5);border-color:rgba(170,219,194,.22); color:#e9f5eb; }
+.opt:hover { background:rgba(44,76,65,.52); }
+.opt.on { background:rgba(145,229,198,.1);border-color:var(--brand);box-shadow:inset 0 0 0 1px rgba(145,229,198,.25); }
+.opt b { color:var(--brand-d); }
+.pick { min-height:43px; background:rgba(16,38,39,.82);border-color:rgba(170,219,194,.24); color:#d9e8de; }
+.pick:hover:not(:disabled) { background:rgba(145,229,198,.12); }
+.pick.on { background:var(--grad);border-color:var(--brand);color:#09261e; }
+.pick:disabled { background:rgba(180,197,188,.05);color:#829791; }
+.summary { background:linear-gradient(160deg,#1b3534,#14292c); border-color:rgba(145,229,198,.2); }
+.step-nav { align-items:center; }
+.book .label { color:#c5dfd1; }
+#track-form { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:.85rem; align-items:end;
+  padding:1.3rem; border:1px solid var(--atelier-line); background:linear-gradient(140deg,#192f31,#102126);
+  border-radius:18px; box-shadow:var(--atelier-shadow); }
+#track-form>div { min-width:0; }
+#track-form .btn { min-height:47px; }
+#track-out:not(:empty) { margin-top:1.5rem; }
+.timeline { padding:1rem 0; }
+.timeline li { align-items:flex-start; gap:.75rem; }
+.done-step svg { color:var(--brand); }
+
+/* Leaflet uses its own popup / control palette: bring it into the product. */
+.map .leaflet-tile-pane { filter:saturate(.75) contrast(.96) brightness(.9); }
+.leaflet-container { background:#15282a; border-radius:inherit; }
+.leaflet-popup-content-wrapper,.leaflet-popup-tip {
+  background:#1b3535; color:#e8f2eb;box-shadow:0 18px 36px -22px #000;
+}
+.leaflet-popup-content a,.leaflet-container a.leaflet-popup-close-button { color:var(--brand-d); }
+.leaflet-bar,.leaflet-control-zoom { border-color:rgba(145,229,198,.2)!important; }
+.leaflet-bar a { background:#1b3535!important;color:#d4f3df!important; border-color:#2d4b49!important; }
+.leaflet-bar a:hover { background:#29534b!important; }
+.geo { gap:1rem; padding:.8rem 0; }
+.loc-chips .btn,.chips-row .btn { min-height:38px; }
+#results .pcard { min-height:100%; }
+#results .actions { gap:.4rem; }
+
+/* Authentication pages use the same background depth and mint/copper language. */
+.auth-body,.adm-body { background:transparent; }
+.auth-scene .gp i { background:linear-gradient(155deg,rgba(125,209,167,.16),rgba(14,42,43,.06));
+  border-color:rgba(165,222,189,.23);box-shadow:0 35px 65px -34px rgba(0,0,0,.85); }
+.auth-scene .gp2 i { background:linear-gradient(160deg,rgba(237,189,151,.17),rgba(37,69,59,.06)); }
+.auth-scene .gp3 i { background:linear-gradient(160deg,rgba(111,207,169,.18),rgba(18,56,50,.05)); }
+.auth-scene .ring i { background:transparent;border-color:rgba(141,223,188,.27);
+  box-shadow:0 0 40px rgba(145,229,198,.12),inset 0 0 35px rgba(145,229,198,.08); }
+.auth-scene .sphere i { background:radial-gradient(circle at 28% 25%,#e8c5a4,#a5c7a8 45%,#284d46 100%);
+  box-shadow:0 25px 45px -23px rgba(128,221,180,.48); }
+.auth-card { background:linear-gradient(165deg,rgba(30,53,54,.97),rgba(14,30,35,.98));
+  border:1px solid rgba(145,229,198,.22);box-shadow:var(--atelier-shadow);border-radius:22px; }
+.auth-card::before { background:conic-gradient(from var(--a,0deg),transparent 0 78%,rgba(145,229,198,.54) 88%,transparent 100%); }
+.auth-logo { color:#f1f9f0; }
+.auth-form label { color:#bdd7c9; }
+.auth-form .iw>svg,.auth-form .iw>i { color:#92b6a8; }
+.auth-form .eye { color:#b3cdc0; }
+.auth-form .eye:hover { background:rgba(145,229,198,.1);color:#fff; }
+.auth-form .check { color:#bcd1c4; }
+.link-btn { color:var(--brand-d); }
+.back-home { color:#d6eadb; background:rgba(25,47,48,.87);border-radius:11px; }
+.back-home:hover { color:#fff; }
+.mode-badge { border-radius:9px;background:rgba(145,229,198,.07); }
+.mode-badge.ok { color:#bdf5d3;border-color:rgba(145,229,198,.3); }
+.mode-badge.demo { color:#f2c49e;border-color:rgba(237,189,151,.32); }
+
+/* Operations: notices, charts and tables respond to exactly the same tokens. */
+.adm-login .auth-card { max-width:480px; }
+.top-actions .btn[aria-pressed=true] { color:var(--atelier-warning);background:rgba(237,189,151,.1);border-color:rgba(237,189,151,.33); }
+.bell-n { color:#102e24;background:var(--brand);box-shadow:0 0 0 2px #13282b; }
+.profile-btn { color:#e9f1e9; }
+.sb-foot a:focus-visible,.sb-nav button:focus-visible { outline:2px solid var(--brand);outline-offset:2px; }
+.kpi .k-ico svg { width:20px;height:20px; }
+.chart-card svg { max-width:100%; }
+.c-big { fill:#f2f8ee; }
+.c-sm { fill:#bfdac9; }
+.c-ax { fill:#96b3a6; }
+.legend li { color:#c1d6c8; }
+.hb-track { background:rgba(145,229,198,.075); }
+.tbl-wrap { isolation:isolate; }
+.tbl th { color:#b7cdbf; }
+.tbl th button:hover { color:#fff; }
+.tbl td,.tbl td .cell-main { min-width:0; }
+.tbl tbody tr:hover { background:rgba(145,229,198,.055); }
+.ib:hover { border-color:rgba(145,229,198,.48); }
+.donut-wrap { gap:1.5rem; }
+.adm-dialog,.menu { background:#152c2d;border:1px solid rgba(145,229,198,.18); }
+.danger-fill { background:#ae4554;box-shadow:none;color:#fff; }
+.danger-fill:hover { background:#c25463; }
+
+/* Existing .bar is the header flex row, but admin SVG charts reuse 'bar'
+   for rects. Keep SVG rectangles drawable instead of inheriting flex. */
+svg rect.bar { display:inline; min-height:0; padding:0; }
+@media (min-width:1100px) {
+  .chart-card:nth-child(3) .hbars { grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem; }
+}
+@media (max-width:860px) {
+  .book-grid { grid-template-columns:minmax(0,1fr); }
+  .auth-scene .gp { opacity:.5; }
+  .summary { position:static; }
+  .scene { min-height:300px; }
+}
+@media (max-width:700px) {
+  #track-form { grid-template-columns:1fr;padding:1rem; }
+  .book .stepper { gap:.4rem; }
+  .st { font-size:.8rem; }
+  .auth-scene .gp { opacity:.3; }
+  .auth-card::before { display:none; }
+  .orb,.particles { display:none; }
+  .card,.pcard,.cat,.benefit,.state,.summary,.p-main,.p-side,.auth-card,.kpi,.chart-card {
+    -webkit-backdrop-filter:none; backdrop-filter:none;
+  }
+  .sidebar { overflow-y:auto; }
+  #site-nav.open { max-height:75vh; overflow-y:auto; }
+  .tbl td { overflow-wrap:anywhere; }
+}
+@media(prefers-reduced-motion:reduce){
+  .auth-scene .gp,.auth-card::before,.auth-card,.scene-in { animation:none!important;transition:none!important; }
+}
