@@ -1,6 +1,6 @@
 // Tiny dependency-free SVG charts for the admin dashboard. All text is escaped; values are plain numbers.
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-export const PALETTE = ['#91e5c6', '#edbd97', '#86ced7', '#b3b5ea', '#e7cf85', '#7fc9a1'];
+export const PALETTE = ['#8c5a97', '#acbbac', '#b891b4', '#d1b3ca', '#6d9079', '#d8b59b'];
 
 // Donut: items = [{label, value}]. Returns '' when there is nothing to draw.
 export function donut(items, title) {
@@ -13,7 +13,7 @@ export function donut(items, title) {
   }).join('');
   const legend = items.map((i, k) => `<li><i style="background:${PALETTE[k % PALETTE.length]}"></i>${esc(i.label)}<b>${i.value}</b></li>`).join('');
   const desc = items.map((i) => `${i.label} ${i.value}`).join(', ');
-  return `<div class="donut-wrap"><svg viewBox="0 0 180 180" role="img" aria-label="${esc(title)}: ${esc(desc)}"><circle cx="90" cy="90" r="${R}" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="22"/>${arcs}<text x="90" y="88" text-anchor="middle" class="c-big">${total}</text><text x="90" y="106" text-anchor="middle" class="c-sm">total</text></svg><ul class="legend">${legend}</ul></div>`;
+  return `<div class="donut-wrap"><svg viewBox="0 0 180 180" role="img" aria-label="${esc(title)}: ${esc(desc)}"><circle cx="90" cy="90" r="${R}" fill="none" stroke="#e8e1e8" stroke-width="22"/>${arcs}<text x="90" y="88" text-anchor="middle" class="c-big">${total}</text><text x="90" y="106" text-anchor="middle" class="c-sm">total</text></svg><ul class="legend">${legend}</ul></div>`;
 }
 
 // Vertical bars: items = [{label, value}]
@@ -23,7 +23,7 @@ export function bars(items, title) {
     const h = Math.round((i.value / max) * (H - pad * 2 - 14)), x = pad + slot * k + (slot - bw) / 2, y = H - pad - h;
     return `<g><rect class="bar" style="animation-delay:${k * 60}ms" x="${x}" y="${y}" width="${bw}" height="${h}" rx="7" fill="url(#gbar)"><title>${esc(i.label)}: ${i.value}</title></rect><text x="${x + bw / 2}" y="${y - 6}" text-anchor="middle" class="c-sm">${i.value}</text><text x="${x + bw / 2}" y="${H - 8}" text-anchor="middle" class="c-ax">${esc(i.label)}</text></g>`;
   }).join('');
-  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)}: ${esc(items.map((i) => `${i.label} ${i.value}`).join(', '))}"><defs><linearGradient id="gbar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9eed0"/><stop offset="1" stop-color="#4c927b"/></linearGradient></defs><line x1="${pad}" x2="${W - pad}" y1="${H - pad}" y2="${H - pad}" stroke="rgba(255,255,255,.12)"/>${body}</svg>`;
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)}: ${esc(items.map((i) => `${i.label} ${i.value}`).join(', '))}"><defs><linearGradient id="gbar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a6849d"/><stop offset="1" stop-color="#523e5c"/></linearGradient></defs><line x1="${pad}" x2="${W - pad}" y1="${H - pad}" y2="${H - pad}" stroke="#e8e1e8"/>${body}</svg>`;
 }
 
 // Horizontal bars: items = [{label, value, sub}]

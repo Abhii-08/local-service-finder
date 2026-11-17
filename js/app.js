@@ -214,11 +214,20 @@ function initHome() {
   $('#stats-strip')?.replaceChildren(
     ...[[PROVIDERS.length, 'Sample providers'], [CATEGORIES.length, 'Service categories'], [LOCALITIES.length, 'Localities covered']].map(([n, t]) => h('div', { class: 'stat' }, h('b', { 'data-count': n }, '0'), h('span', {}, t))),
     h('div', { class: 'stat' }, h('b', {}, avg + ' ★'), h('span', {}, 'Average sample rating')));
+  // These are editorial stock images, not photographs of the fictional providers.
+  const photoByCategory = {
+    electrician: ['27928761', 'Electrician working on an electrical panel'],
+    plumber: ['32588548', 'Plumber repairing a pipe'],
+    tutor: ['4308096', 'Tutor supporting a student during a lesson'],
+    repair: ['38252524', 'Technician repairing electronics at a workbench']
+  };
   $('#cat-grid')?.replaceChildren(...CATEGORIES.map((c) => {
     const ps = PROVIDERS.filter((p) => p.category === c.id);
     return h('button', { class: 'cat3d', type: 'button', 'data-tilt': '6', 'data-reveal': '', 'aria-haspopup': 'dialog', onclick: () => openCat(c) },
-      h('span', { class: 'ico' }, icon(c.icon)), h('h3', {}, c.label), h('p', {}, c.blurb),
-      h('span', { class: 'cat-more' }, h('span', {}, `${ps.length} providers · from ${money(Math.min(...ps.map((p) => p.price)))}`), icon('arrow-up-right')));
+      h('img', { class: 'category-photo', src: `https://images.pexels.com/photos/${photoByCategory[c.id]?.[0] || '38252524'}/pexels-photo-${photoByCategory[c.id]?.[0] || '38252524'}.jpeg?auto=compress&cs=tinysrgb&w=800`, alt: photoByCategory[c.id]?.[1] || 'Home service work', loading: 'lazy', decoding: 'async', width: '800', height: '530' }),
+      h('div', { class: 'category-copy' },
+        h('span', { class: 'ico' }, icon(c.icon)), h('h3', {}, c.label), h('p', {}, c.blurb),
+        h('span', { class: 'cat-more' }, h('span', {}, `${ps.length} sample providers · from ${money(Math.min(...ps.map((p) => p.price)))}`), icon('arrow-up-right'))));
   }));
   $('#reviews')?.replaceChildren(...CATEGORIES.map((c) => {
     const p = PROVIDERS.filter((x) => x.category === c.id).sort((a, b) => b.rating - a.rating)[0], r = p?.sampleReviews?.[0]; if (!r) return null;

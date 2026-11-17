@@ -28,7 +28,7 @@ test('user and admin pages share one premium design system', async () => {
 
 test('navigation, forms, filters, charts and admin interactions remain present', async () => {
   const required = {
-    'index.html':['home-search','cat-grid','featured','hero-proof','scene-in'],
+    'index.html':['home-search','cat-grid','featured','hero-proof','hero-gallery'],
     'providers.html':['id="filters"','id="results"','id="map"','id="locate"'],
     'provider.html':['id="profile"'],
     'enquiry.html':['id="enq-form"','id="stepper"'],
