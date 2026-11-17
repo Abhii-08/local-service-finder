@@ -1,0 +1,28 @@
+name: Design and functionality checks
+on:
+  push:
+    branches: [design/premium-local-atelier]
+  pull_request:
+    paths:
+      - '**.html'
+      - 'css/**'
+      - 'js/**'
+      - 'server/**'
+      - 'tests/**'
+      - '.github/workflows/design-checks.yml'
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax
+        run: |
+          for file in js/*.js server/*.mjs tests/*.mjs; do node --check "$file"; done
+      - name: Run smoke tests
+        run: node --test tests/*.test.mjs
