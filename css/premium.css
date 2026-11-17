@@ -305,3 +305,22 @@ button.kpi:hover { border-color: rgba(145,229,198,.5); }
   }
   [data-reveal] { opacity: 1 !important; transform: none !important; }
 }
+
+/* Supporting pages: strong hierarchy without forcing a layout rewrite */
+.page-kicker { display:block; color: var(--atelier-highlight); font-size:.72rem; letter-spacing:.18em; font-weight:800; text-transform:uppercase; margin:0 0 .8rem; }
+.page-lead { max-width:63ch; color:#afc5bf; line-height:1.75; margin:0 0 1.6rem; }
+#main>.h-md,.book .h-md,.narrow>.h-md { font-size:clamp(2.4rem,5vw,4rem); margin-bottom:.8rem; letter-spacing:-.065em; }
+#main>.filters { margin-top:1.8rem; }
+.track-form { border-color:var(--atelier-line); }
+.auth-card { border-color:rgba(145,229,198,.24); }
+.auth-logo { letter-spacing:-.06em; }
+.p-main,.p-side { padding:clamp(1.2rem,2.7vw,2rem); }
+.p-side .btn,.form .btn { min-height:46px; }
+.review-list,.mini-list { max-width:100%; }
+#site-footer .foot { padding-block:3.2rem; }
+/* Match status colors to the green / copper identity (semantics stay distinct) */
+.s-saved-not-sent,.s-saved { background:rgba(145,229,198,.12);color:#c2f2d7;border-color:rgba(145,229,198,.27); }
+.s-contacted { background:rgba(117,196,204,.12);color:#aee8ec;border-color:rgba(117,196,204,.28); }
+.s-confirmed { background:rgba(237,189,151,.14);color:#f5caa8;border-color:rgba(237,189,151,.28); }
+.s-completed { background:rgba(77,189,123,.14);color:#a9f5c1;border-color:rgba(77,189,123,.28); }
+@media(max-width:700px){.page-lead{margin-bottom:1.1rem}.stat:first-child{border-left:0}.hero-in{max-width:100%}}
