@@ -19,11 +19,13 @@ test('every public and admin page includes the approved design layer last',async
   assert.ok(theme.toLowerCase().includes(value.toLowerCase()),'missing brand color '+value);
  }
 });
-test('homepage photos are linked to accessible stock library IDs and functional directory sections remain',async()=>{
+test('full-screen single-photo hero preserves directory search and functionality',async()=>{
  const s=await read('index.html');
- for(const marker of ['id="home-search"','id="cat-grid"','id="featured"','id="stats-strip"','class="hero-gallery"','gallery-plumber','gallery-repair','gallery-electric','id="cat-dialog"']){
+ for(const marker of ['id="home-search"','id="cat-grid"','id="featured"','id="stats-strip"','class="hero hero-full"','class="hero-photo"','class="hero-veil"','id="home-search"','id="cat-dialog"']){
   assert.ok(s.includes(marker),'missing '+marker);
  }
+ assert.ok(s.includes('photos/15124970/pexels-photo-15124970.jpeg'));
+ assert.ok(!s.includes('class="gallery-mosaic"'));
  const app=await read('js/app.js');
  for(const marker of ['photoByCategory','27928761','32588548','4308096','38252524','openCat(c)','getProviders()']){
   assert.ok(app.includes(marker),'missing '+marker);

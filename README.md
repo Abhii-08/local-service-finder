@@ -137,3 +137,6 @@ Notes:
 - No customer accounts, provider onboarding or real verification.
 - External resources are loaded from CDNs (Google Fonts, Lucide icons from unpkg, Leaflet/OpenStreetMap tiles, pravatar photos), so some visuals need internet access.
 - Production path: replace the JSON store with PostgreSQL, add provider/admin authentication, send notifications via email/SMS/WhatsApp Business API, add CAPTCHA, a privacy policy and data-retention rules, and move reviews to real, moderated customer feedback.
+## Full-screen photographic hero (November 2026)
+
+The homepage uses one illustrative real [Pexels photograph by Thới Nam Cao](https://www.pexels.com/photo/men-working-inside-a-house-under-repairs-15124970/) with responsive image sizes up to 3840px. The [Pexels License](https://www.pexels.com/license/) permits free use including commercial sites. The image is served from Pexels at runtime. The hero labels the verification/response/price features as goals, not verified guarantees; listings remain fictional demos. The existing directory search remains functional below the photograph.
