@@ -1,6 +1,6 @@
 // Tiny dependency-free SVG charts for the admin dashboard. All text is escaped; values are plain numbers.
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-export const PALETTE = ['#5b9bff', '#8b5cf6', '#22d3ee', '#f472b6', '#fbbf24', '#34d399'];
+export const PALETTE = ['#91e5c6', '#edbd97', '#86ced7', '#b3b5ea', '#e7cf85', '#7fc9a1'];
 
 // Donut: items = [{label, value}]. Returns '' when there is nothing to draw.
 export function donut(items, title) {
@@ -23,7 +23,7 @@ export function bars(items, title) {
     const h = Math.round((i.value / max) * (H - pad * 2 - 14)), x = pad + slot * k + (slot - bw) / 2, y = H - pad - h;
     return `<g><rect class="bar" style="animation-delay:${k * 60}ms" x="${x}" y="${y}" width="${bw}" height="${h}" rx="7" fill="url(#gbar)"><title>${esc(i.label)}: ${i.value}</title></rect><text x="${x + bw / 2}" y="${y - 6}" text-anchor="middle" class="c-sm">${i.value}</text><text x="${x + bw / 2}" y="${H - 8}" text-anchor="middle" class="c-ax">${esc(i.label)}</text></g>`;
   }).join('');
-  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)}: ${esc(items.map((i) => `${i.label} ${i.value}`).join(', '))}"><defs><linearGradient id="gbar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#4f8cff"/></linearGradient></defs><line x1="${pad}" x2="${W - pad}" y1="${H - pad}" y2="${H - pad}" stroke="rgba(255,255,255,.12)"/>${body}</svg>`;
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)}: ${esc(items.map((i) => `${i.label} ${i.value}`).join(', '))}"><defs><linearGradient id="gbar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9eed0"/><stop offset="1" stop-color="#4c927b"/></linearGradient></defs><line x1="${pad}" x2="${W - pad}" y1="${H - pad}" y2="${H - pad}" stroke="rgba(255,255,255,.12)"/>${body}</svg>`;
 }
 
 // Horizontal bars: items = [{label, value, sub}]
