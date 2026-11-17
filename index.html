@@ -1,18 +1,40 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ddecdd"><link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/theme.css"><link rel="stylesheet" href="css/premium.css"><link rel="stylesheet" href="css/showcase.css"><script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer></script><title>Service Local Finder | Find local help, skip the guesswork</title><meta name="description" content="Explore sample electricians, plumbers, tutors and repair technicians by locality, indicative price and service. Enquiries are not confirmed bookings."></head>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f1f4ef"><link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/theme.css"><link rel="stylesheet" href="css/premium.css"><link rel="stylesheet" href="css/showcase.css"><link rel="stylesheet" href="css/full-hero.css"><script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer></script><title>Service Local Finder | Find trusted local help</title><meta name="description" content="Explore sample electricians, plumbers, tutors and repair technicians by locality, indicative price and service. Enquiries are not confirmed bookings."></head>
 <body><a class="skip" href="#main">Skip to content</a>
 <header id="site-header"></header>
 <main id="main">
 
-<section class="hero"><div class="wrap hero-grid">
-  <div class="hero-in">
-    <span class="hero-kicker">NEIGHBOURHOOD SERVICES, WITHOUT THE HASSLE</span>
-    <span class="badge"><i aria-hidden="true"></i>Demo directory for Greater Noida</span>
-    <h1>Local help.<span class="hero-title-accent">Beautifully simple.</span></h1>
-    <p class="lead">Explore electricians, plumbers, tutors and repair specialists in your neighbourhood. Compare sample profiles and indicative prices, then save your enquiry.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary lg" href="providers.html"><i data-lucide="compass" aria-hidden="true"></i>Explore services</a>
-      <a class="btn btn-ghost lg" href="enquiry.html"><i data-lucide="calendar-check" aria-hidden="true"></i>Send an enquiry</a>
+<section class="hero hero-full" aria-labelledby="hero-heading">
+  <!-- Single authentic Pexels photograph; not an AI-generated image or collage -->
+  <picture class="hero-photo" aria-hidden="true">
+    <source media="(max-width: 700px)" srcset="https://images.pexels.com/photos/15124970/pexels-photo-15124970.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960 960w, https://images.pexels.com/photos/15124970/pexels-photo-15124970.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1440 1440w" sizes="100vw">
+    <img src="https://images.pexels.com/photos/15124970/pexels-photo-15124970.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2560"
+      srcset="https://images.pexels.com/photos/15124970/pexels-photo-15124970.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1440 1440w, https://images.pexels.com/photos/15124970/pexels-photo-15124970.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2560 2560w, https://images.pexels.com/photos/15124970/pexels-photo-15124970.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=3840 3840w"
+      sizes="100vw" width="6240" height="4160" fetchpriority="high" loading="eager" decoding="async" alt="">
+  </picture>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="wrap hero-overlaid">
+    <div class="hero-in">
+      <span class="hero-kicker">LOCAL SERVICES NEAR YOU</span>
+      <h1 id="hero-heading">Find trusted local help.<span class="hero-title-accent">Electricians, plumbers &amp; repairs.</span></h1>
+      <p class="lead">Connect with reliable local professionals for your home and business needs — all in one place.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary lg" href="enquiry.html"><i data-lucide="arrow-right" aria-hidden="true"></i>Get a Quote</a>
+        <a class="btn btn-ghost lg" href="providers.html"><i data-lucide="calendar-days" aria-hidden="true"></i>Book a Service</a>
+      </div>
+      <div class="hero-proof" aria-label="Our service goals">
+        <span><i data-lucide="badge-check" aria-hidden="true"></i>Verified Professionals</span>
+        <span><i data-lucide="zap" aria-hidden="true"></i>Fast Response</span>
+        <span><i data-lucide="coins" aria-hidden="true"></i>Transparent Pricing</span>
+      </div>
+      <p class="hero-disclaimer">Demo directory — these are platform goals, not verified provider credentials, guaranteed response times or confirmed prices.</p>
     </div>
+  </div>
+  <span class="hero-photo-credit">Photo: Thới Nam Cao / Pexels · Illustrative home renovation scene</span>
+</section>
+
+<section class="home-search-section" aria-label="Search local service directory">
+  <div class="wrap home-search-inner">
+    <div class="home-search-title"><span class="home-search-eyebrow">FIND THE RIGHT HELP</span><h2>Search services near you.</h2><p>Explore sample listings by service and locality.</p></div>
     <form id="home-search" class="search" action="providers.html" method="get" role="search">
       <div><label for="hq">Service</label><input id="hq" name="q" type="search" placeholder="e.g. AC repair, plumber" autocomplete="off"></div>
       <div><label for="hloc">Locality</label><input id="hloc" name="loc" list="locality-list" placeholder="e.g. Alpha 1" autocomplete="off"><datalist id="locality-list"></datalist></div>
@@ -21,31 +43,8 @@
     <nav class="qchips" aria-label="Popular searches"><span>Popular:</span>
       <a href="providers.html?q=AC%20repair">AC repair</a><a href="providers.html?cat=plumber">Plumber</a><a href="providers.html?cat=electrician">Electrician</a><a href="providers.html?q=maths">Maths tutor</a><a href="providers.html?q=fridge">Fridge repair</a>
     </nav>
-    <div class="hero-proof" aria-label="Directory features"><span><i data-lucide="map-pin" aria-hidden="true"></i>Locality-first search</span><span><i data-lucide="sliders-horizontal" aria-hidden="true"></i>Clear price guides</span><span><i data-lucide="clipboard-check" aria-hidden="true"></i>Enquiry tracking</span></div>
   </div>
-
-  <div class="hero-gallery" aria-label="Illustrative photographs of home-service work">
-    <div class="gallery-mosaic">
-      <figure class="gallery-shot gallery-electric">
-        <img src="https://images.pexels.com/photos/27928761/pexels-photo-27928761.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
-          srcset="https://images.pexels.com/photos/27928761/pexels-photo-27928761.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/27928761/pexels-photo-27928761.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w"
-          sizes="(max-width:860px) 65vw, 30vw" width="1600" height="1066" fetchpriority="high" decoding="async" alt="Electrician working with an electrical panel indoors">
-        <figcaption><i data-lucide="zap" aria-hidden="true"></i> ELECTRICIANS</figcaption>
-      </figure>
-      <figure class="gallery-shot gallery-plumber">
-        <img src="https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000"
-          width="1000" height="1400" loading="lazy" decoding="async" alt="Plumber repairing a pipe using a wrench indoors">
-        <figcaption><i data-lucide="droplets" aria-hidden="true"></i> PLUMBERS</figcaption>
-      </figure>
-      <figure class="gallery-shot gallery-repair">
-        <img src="https://images.pexels.com/photos/38252524/pexels-photo-38252524.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000"
-          width="1000" height="1400" loading="lazy" decoding="async" alt="Technician repairing electronics in a workshop">
-        <figcaption><i data-lucide="wrench" aria-hidden="true"></i> REPAIR SERVICES</figcaption>
-      </figure>
-    </div>
-    <span class="gallery-caption">People behind the work <span aria-hidden="true">↗</span> <small>Illustrative stock photos</small></span>
-  </div>
-</div></section>
+</section>n>
 
 <section class="wrap" aria-label="Directory at a glance" data-reveal><div class="card stats" id="stats-strip"></div></section>
 
