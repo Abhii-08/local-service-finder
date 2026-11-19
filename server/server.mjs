@@ -153,6 +153,7 @@ async function api(req, res, url) {
 async function serveStatic(res, pathname) {
   let rel = decodeURIComponent(pathname);
   if (rel.endsWith('/')) rel += 'index.html';
+  if (rel === '/index.html') rel = '/legacy-index.html';
   const file = path.join(ROOT, rel);
   const blocked = !file.startsWith(ROOT + path.sep) || /\/(server|node_modules|\.)/.test(rel) || /package(-lock)?\.json$/.test(rel);
   try {

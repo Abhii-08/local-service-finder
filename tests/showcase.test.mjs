@@ -7,7 +7,7 @@ import { PALETTE } from '../js/charts.js';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read=(p)=>readFile(path.join(root,p),'utf8');
-const pages=['index.html','providers.html','provider.html','enquiry.html','track.html','login.html','admin.html'];
+const pages=['legacy-index.html','providers.html','provider.html','enquiry.html','track.html','login.html','admin.html'];
 test('every public and admin page includes the approved design layer last',async()=>{
  for(const p of pages){
   const s=await read(p);
@@ -20,7 +20,7 @@ test('every public and admin page includes the approved design layer last',async
  }
 });
 test('full-screen single-photo hero preserves directory search and functionality',async()=>{
- const s=await read('index.html');
+ const s=await read('legacy-index.html');
  for(const marker of ['id="home-search"','id="cat-grid"','id="featured"','id="stats-strip"','class="hero hero-full"','class="hero-photo"','class="hero-veil"','id="home-search"','id="cat-dialog"']){
   assert.ok(s.includes(marker),'missing '+marker);
  }

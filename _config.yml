@@ -1,0 +1,6 @@
+exclude:
+  - admin.html
+  - login.html
+  - legacy-index.html
+  - server/
+  - tests/

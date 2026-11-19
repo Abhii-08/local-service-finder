@@ -4,6 +4,10 @@ A home-services directory for Greater Noida with a full-screen photographic hero
 
 The demo uses fictional providers and ratings. The admin panel can update request statuses and control which providers appear in the directory.
 
+## Public demo
+
+[Open Local Service Finder on GitHub Pages](https://abhii-08.github.io/local-service-finder/). The public version supports filtering, provider profiles, saved providers and demo request tracking. It saves demo references and preferred times in the browser. The hosted admin queue is available through the owner-only site.
+
 ## Run locally
 
 Install Node.js 24 or newer, then open a terminal in the repository folder.
@@ -20,14 +24,15 @@ The local server listens on loopback and uses an in-memory database. Its request
 
 | Path | Purpose |
 | --- | --- |
-| `_app/public/` | Main site, admin interface, provider data and bundled assets |
+| `index.html`, `pages/` | Public GitHub Pages frontend and demo interactions |
+| `_app/public/` | Owner-only site frontend, admin interface and provider data |
 | `_app/worker/handler.js` | Directory, request tracking and admin API |
 | `_app/drizzle/` | Database schema migrations |
 | `_app/scripts/` | Local preview and Worker build |
 
 Run `npm run build` to generate the Worker under `_app/dist/`. The hosted setup supplies the `DB` binding and gates the entire app, including its admin API, behind owner sign-in.
 
-The root HTML and asset files serve the earlier GitHub Pages demo. Its original local backend is available with `npm run start:legacy`. See the [earlier version's setup instructions](https://github.com/Abhii-08/local-service-finder/blob/2c1eb6354608fdb88a7059aa4b082be805765cc9/README.md) for that demo.
+The earlier implementation is available locally with `npm run start:legacy`. See the [earlier version's setup instructions](https://github.com/Abhii-08/local-service-finder/blob/2c1eb6354608fdb88a7059aa4b082be805765cc9/README.md) for that demo.
 
 ## Photography
 
