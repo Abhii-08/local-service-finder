@@ -1,8 +1,13 @@
 {
   "name": "local-service-finder",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "private": true,
-  "scripts": { "start": "node server/server.mjs" },
-  "engines": { "node": ">=18" }
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "node _app/scripts/dev.mjs",
+    "build": "node _app/scripts/build.mjs",
+    "start:legacy": "node server/server.mjs"
+  },
+  "engines": { "node": ">=24" }
 }
